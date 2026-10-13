@@ -52,6 +52,13 @@ npx slidev export slides.md --format png --with-clicks --output <temp dir>
 ```
 Look at every changed slide at every click. Check video playback with `npm run dev` (http://localhost:3030).
 
+## Publishing
+
+- Repo: https://github.com/salperezate24/asme_slt_oct26 (public). Git author for this repo: Salomon Perez-Atencia <salperezate@unal.edu.co> (local config).
+- Site: https://salperezate24.github.io/asme_slt_oct26/
+- Pushing to `main` redeploys: `.github/workflows/pages.yml` builds with `--base /asme_slt_oct26/` and publishes to the `gh-pages` branch (Pages source: gh-pages / root). Local check: `npx slidev build slides.md --out dist --base /asme_slt_oct26/`.
+- **Strip EXIF/GPS from every new photo before committing (the deck is public):** `exiftool -all= -overwrite_original <file>`, then check `mdls -name kMDItemLatitude <file>` returns `(null)`. If the photo has an EXIF rotation (`exiftool -Orientation`), bake it in first (Pillow `ImageOps.exif_transpose`) or it will display rotated.
+
 ## Content decisions (don't change without asking)
 
 - Cover: title in `text-5xl`. Notes: "Hi, I'm Salomon. I'm a mechanical engineer from Colombia, and today I work with data."
