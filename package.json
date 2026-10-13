@@ -1,0 +1,25 @@
+{
+  "name": "asme-slides",
+  "description": "Slidev presentation template (blue palette).",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "slidev build slides.md --out dist",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "export:pdf": "slidev export --output \"presentation.pdf\"",
+    "preview": "npx serve dist"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.14.1",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "vue": "^3.5.29"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.58.2"
+  }
+}
